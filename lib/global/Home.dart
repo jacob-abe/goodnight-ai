@@ -31,6 +31,8 @@ class HomeState extends State<Home> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: _updateIndex,
+        selectedItemColor: Colors.deepPurple,
+        unselectedItemColor: Colors.black54,
         selectedFontSize: 14,
         unselectedFontSize: 13,
         iconSize: 30,
