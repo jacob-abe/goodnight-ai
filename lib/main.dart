@@ -15,7 +15,7 @@ Future<void> main() async {
   // needs to be initialized before using workmanager package
   WidgetsFlutterBinding.ensureInitialized();
   // Init firebase
-  initializeFirebase();
+  await initializeFirebase();
   // Init bg worker
   WorkManagerRunner();
   //Run app

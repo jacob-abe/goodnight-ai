@@ -44,6 +44,7 @@ dependencies:
   flutter_onboarding_slider: ^1.0.8
   is_first_run: ^1.0.0
   flutter_svg: ^2.0.0+1
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:

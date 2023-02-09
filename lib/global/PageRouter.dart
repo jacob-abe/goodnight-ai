@@ -1,31 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:goodnight_ai/onboarding/OnboardingPage.dart';
 import 'package:goodnight_ai/global/Home.dart';
-import 'package:is_first_run/is_first_run.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PageRouter extends StatelessWidget {
   const PageRouter({Key? key}) : super(key: key);
 
-  Future<bool> _checkFirstRun() async {
-    bool ifr = await IsFirstRun.isFirstRun();
-    print(ifr);
-    return ifr;
-  }
-
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _checkFirstRun(),
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.data ?? false) {
-            print(snapshot);
+        if (snapshot.connectionState == ConnectionState.active) {
+          if (snapshot.hasData) {
             return const Home(key: Key('Home'));
           } else {
-            print(snapshot);
             return const OnBoardingPage();
           }
-        } else {
+        }else{
           return const Scaffold(
             body: Center(
               child: CircularProgressIndicator(),

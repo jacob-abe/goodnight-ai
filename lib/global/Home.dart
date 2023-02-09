@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../profile/ProfilePage.dart';
 import '../home/HomePage.dart';
+import '../atom/StyledText.dart';
 
 class Home extends StatefulWidget {
   const Home({required Key key}) : super(key: key);
@@ -24,7 +25,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Goodnight AI', textScaleFactor: 1.2 ,),
+        title: const StyledText(text: 'Goodnight AI', type: TextType.h2, color: Colors.deepPurple,),
       ),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
