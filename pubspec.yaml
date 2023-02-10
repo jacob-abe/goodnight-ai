@@ -45,6 +45,7 @@ dependencies:
   is_first_run: ^1.0.0
   flutter_svg: ^2.0.0+1
   animated_text_kit: ^4.2.2
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

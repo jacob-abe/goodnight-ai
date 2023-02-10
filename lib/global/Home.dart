@@ -23,6 +23,7 @@ class HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const StyledText(text: 'Goodnight AI', type: TextType.h2, color: Colors.deepPurple,),
